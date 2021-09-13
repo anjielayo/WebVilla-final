@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import logoHead from "../../assets/complogo.png";
 import AboutPage from "./AboutDeveloper";
 import './css/footer.css';
@@ -6,7 +7,15 @@ import { toast } from "react-toastify";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faWhatsapp, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
-const Footer=()=>{
+const Footer=(props)=>{
+const [showAbout, setShowAbout] = useState(false);
+const displayAboutModal = () => {
+    setShowAbout(true);
+};
+
+const unDisplayAboutModal = (boolean) => {
+    setShowAbout(boolean);
+};
   return(
 <div className="footerbody">
           {/* <footer id="dk-footer" className="dk-footer">
@@ -200,16 +209,16 @@ const Footer=()=>{
               <div className="container pt-5 border-bottom">
                   <div className="row">
                       <div className="mb-5 align-content-center float-left">
-                          <a href="#"><img src="complogo.png" classname="img-thumbnail" width="60%" /></a>
+                          <a href="/"><img src="complogo.png" classname="img-thumbnail" width="60%" /></a>
                       </div>
                       <div className="col-md-9 col-sm-12">
                           <div className="col-md-3 col-sm-6 col-6 p-0 float-left mb-3 ml-2">
-                              <h5 className="mb-3 font-weight-bold text-uppercase">More Links</h5>
+                              <h5 className="mb-3 font-weight-bold text-uppercase">Quick Links</h5>
                               <span className="mb-4 animate-border border-black" />
                               <ul className="list-group">
-                                  <li className="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#">Cart</a></li>
-                                  <li className="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#">Feedback</a></li>
-                                  <li className="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#">Services</a></li>
+                                  <li className="list-group-item bg-transparent border-0 p-0 mb-2"><Link to="/cart">Cart</Link></li>
+                                  <li className="list-group-item bg-transparent border-0 p-0 mb-2"><a href="/feedback">Feedback</a></li>
+                                  
                               </ul>
                           </div>
                           {/* <div class="col-md-3 col-sm-6 col-6 p-0 mb-3 float-left ml-2">
@@ -226,8 +235,8 @@ const Footer=()=>{
                               <h5 className="mb-3 font-weight-bold text-uppercase">Company</h5>
                               <span className="mb-4 animate-border border-black" />
                               <ul className="list-group">
-                                  <li className="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#">About</a></li>
-                                  <li className="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"> Blog</a></li>
+                                  <li className="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#" onClick={displayAboutModal}>About</a></li>
+                                  <li className="list-group-item bg-transparent border-0 p-0 mb-2"><a href="https://medium.com/@anjolaoluwa.olutomilayo/webvilla-d8d21f7ff0a7"> Blog</a></li>
                               </ul>
                           </div>
                           <div className="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left ml-2">
@@ -243,10 +252,10 @@ const Footer=()=>{
                                           Github</a>
                                   </li>
                                   <li className="list-group-item bg-transparent border-0 p-0 mb-2">
-                                      <a href="#" target="_blank"><i className="fa fa-facebook mr-1" /> Facebook</a>
+                                      <a href="www.facebook.com" target="_blank"><i className="fa fa-facebook mr-1" /> Facebook</a>
                                   </li>
                                   <li className="list-group-item bg-transparent border-0 p-0 mb-2">
-                                      <a href="#" target="_blank"><i className="fa fa-youtube mr-1" /> YouTube</a>
+                                      <a href="www.youtube.com" target="_blank"><i className="fa fa-youtube mr-1" /> YouTube</a>
                                   </li>
                               </ul>
                           </div>
@@ -254,13 +263,17 @@ const Footer=()=>{
                       <div className="col-md-12">
                           <div className="py-4 d-flex justify-content-center align-items-center">
                               <a className="mr-4">Copyright © 2021, All Rights Reserved WebVilla</a>
-                              <a className="mr-4" href="#">Home</a>
+                              <a className="mr-4" href="/">Home</a>
                               <a className="mr-4" href="#">Privacy Policy</a>
                               <a className="mr-4" href="#">Terms &amp; Conditions</a>
                           </div>
                       </div>
                   </div>
               </div>
+              <AboutPage style={{ zIndex: '100' }}
+                  showAbout={showAbout}
+                  unDisplayAboutModal={unDisplayAboutModal}
+              />
           </footer>
 </div>)
 }

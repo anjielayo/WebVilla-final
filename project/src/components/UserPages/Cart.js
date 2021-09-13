@@ -47,7 +47,7 @@ const Cart = (props) => {
     <div>
       <nav
         id="top"
-        className="navbar fixed-top navbar-expand-lg navbar-light bg-light"
+        className="navbar fixed-top navbar-transparent navbar-expand-lg navbar-light bg-light"
       >
         <div className="container">
           <Link to="/" className="navbar-brand">

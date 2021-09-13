@@ -22,10 +22,10 @@ const AboutDeveloper = (props) => {
           </div>
           <div>
             <h4 className="mt-3 mb-0 font-weight-bold text-center">
-              New Horizons
+              Al-ameen Yusuf, Chinonye Joseph, Anjola Olutomilayo, Victor Oyiga
             </h4>
             <div className="d-flex justify-content-center">
-              <small className="text-secondary">Developer of WebVilla</small>
+              <small className="text-secondary">Developers of WebVilla</small>
             </div>
             <div className="d-flex justify-content-center mt-3">
               <a

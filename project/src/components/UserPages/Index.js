@@ -354,49 +354,66 @@ const Index = (props) => {
         <ToastContainer />
 
         <div className="container">
+          <div className="row mobview">
+            <div className="col-md-12 justify-content-center align-content-center">
+            <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+              <div className="w-full md:w-3/5 py-6 text-center">
+                <img className="w-full md:w-4/5 z-50 mobimg" src="hero2.png" />
+              </div>
+            </div>
+            </div>
+          </div>
           <div className="row mt-2 mb-2">
+          {/* <div className="row mobview">
+            <div className="col-sm-12">
+              <img src="pt.jpeg" alt="mobile intro" className="mobintro"/>
+            </div>
+          </div> */}
             <div className="col-md-4 justify-content-center"></div>
             
             
             <div className="col-md-4 justify-content-end mx-auto">
+              
+              
               <div className="carousel">
-                <div className="carousel__face"><span className="car_text">This is something</span></div>
-                <div className="carousel__face"><span className="car_text">Very special</span></div>
-                <div className="carousel__face"><span className="car_text">Special is the key</span></div>
-                <div className="carousel__face"><span className="car_text">For you</span></div>
-                <div className="carousel__face"><span className="car_text">Just give it</span></div>
-                <div className="carousel__face"><span className="car_text">A try</span></div>
-                <div className="carousel__face"><span className="car_text">And see</span></div>
-                <div className="carousel__face"><span className="car_text">How IT Works</span></div>
-                <div className="carousel__face"><span className="car_text">Woow</span></div>
+                <div className="carousel__face" ><span className="car_text">This is something</span></div>
+                  <div className="carousel__face" ><span className="car_text">Very special</span></div>
+                  <div className="carousel__face" ><span className="car_text">Special is the key</span></div>
+                  <div className="carousel__face" ><span className="car_text">For you</span></div>
+                  <div className="carousel__face" ><span className="car_text">Just give it</span></div>
+                  <div className="carousel__face" ><span className="car_text">A try</span></div>
+                  <div className="carousel__face" ><span className="car_text">And see</span></div>
+                  <div className="carousel__face" ><span className="car_text">How IT Works</span></div>
+                  <div className="carousel__face" ><span className="car_text">Woow</span></div>
               </div>
-            </div>
+              </div>
+            
             <div className="col-md-4 justify-content-center"></div>
             </div>
             <div className="row mt-5">
              <div className="col-md-2"></div> 
             <div className="col-md-8 justify-content-evenly mt-2">
         {/* <div className="vertical-center "> */}
-        <p>
+        
+              <p className="spacep">
 
                 <br /> <br /> <br /> <br /> <br /> <br /> 
         </p>
           <h3
-            className="display-4 font-weight-bold text-center mt-5"
+            className="display-4 font-weight-bold text-center mt-5 homehead"
             style={{ fontFamily: "Poppins, sans-serif" }}
           >
-            Shop Elegant & Fantastic Fashion!
+            Elegant, Dashing, and Daring Fashion!
           </h3>
           <p className="text-center text-secondary ">
-            Ready to wear dresses tailored for you from online. Hurry up while
-            stock lasts.
+            Expressing the boldness of beauty through fashion.
           </p>
         {/* </div> */}
           <div className="input-group mt-3">
             <input
               type="text"
               className="form-control py-4"
-              placeholder="Search the fashion name that you want here"
+              placeholder="Find the outfit you want here"
               name="searchinput"
               onChange={handleSearchInput}
               onKeyPress={(event) =>
@@ -518,12 +535,12 @@ const Index = (props) => {
       {/* Footer */}
         
       {/* Modals */}
-      <LoginModal
+      <LoginModal style={{zIndex:'100'}}
         showLoginModal={showLoginModal}
         closeLoginModal={closeLoginModal}
         loginSuccess={loginSuccess}
       />
-      <AboutPage
+        <AboutPage style={{ zIndex: '100' }}
         showAbout={showAbout}
         unDisplayAboutModal={unDisplayAboutModal}
       />
